@@ -1,12 +1,12 @@
 # use python version 3 docker image as base image
-FROM python:3
+FROM ubuntu
 
 # cd to directory /usr/src/app. this will be our working directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # copy the content of current directory in to the pwd of docker image.
 # pwd in image is /usr/src/app
-COPY . .
+COPY /app
 
 # now run the command to install dependencies from requirements file
 RUN pip install --no-cache-dir -r requirements.txt
